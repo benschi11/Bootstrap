@@ -33,24 +33,27 @@ Includes Admin panel selectable options for:
 1. Install the [Open Authentication](http://gallery.orchardproject.net/List/Modules/Orchard.Module.NGM.OpenAuthentication) module
 2. From the Admin Settings area for Open Authentication, add a new provider
 3. Use the following settings along with your key/secret pair for each to enable with the included styling
-	Facebook:
-		* Display Name: Facebook
-		* Technical Name: facebook
-		* Identifier: https://graph.facebook.com/oauth/authorize
-	Twitter:
-		* Display Name: Twitter
-		* Technical Name: twitter
-		* Identifier: https://api.twitter.com/oauth/authorize
-	Google:
-		* Display Name: Google
-		* Technical Name: google
-		* Identifier: https://www.googleapis.com/auth/plus.login
+
+Facebook:
+* Display Name: Facebook
+* Technical Name: facebook
+* Identifier: https://graph.facebook.com/oauth/authorize
+
+Twitter:
+* Display Name: Twitter
+* Technical Name: twitter
+* Identifier: https://api.twitter.com/oauth/authorize
+
+Google:
+* Display Name: Google
+* Technical Name: google
+* Identifier: https://www.googleapis.com/auth/plus.login
 
 
 ### Using the NGravatar module
 1. Install the [NGravatar](https://github.com/Jetski5822/ngravatar) module
 2. Modify Bootstrap/Views/Parts/Comment.cshtml and uncomment the <div> NGravatar line in it
-3. Modify the <div> tag directly below it and change "col-lg-12" to "col-lg-11"
+3. Modify the '''<div>''' tag directly below it and change '''col-lg-12''' to '''col-lg-11'''
 
 
 ### Using the Latest Twitter module
