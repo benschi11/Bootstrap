@@ -32,7 +32,7 @@ namespace Bootstrap.Filters {
                 return;
 
             var themeName = _siteThemeService.GetSiteTheme();
-            if (themeName.Name == Constants.THEME_NAME) {
+            if (themeName.Name == Constants.ThemeName) {
                 this.AddCss();
             }
         }
@@ -45,18 +45,14 @@ namespace Bootstrap.Filters {
                 _resourceManager.Require("stylesheet", settings.Swatch)
                                 .AtHead();
 
-                System.Web.HttpContext.Current.Items[Constants.ITEM_USE_SWATCH_NAME] = settings.Swatch.ToString();
-
-            // Add Bootstrap Responsive
-            _resourceManager.Require("stylesheet", ResourceManifest.BOOTSTRAP_RESPONSIVE_STYLE)
-                            .AtHead();
+                System.Web.HttpContext.Current.Items[Constants.UseSwatchName] = settings.Swatch.ToString();
 
             // Add Bootswatch
-            _resourceManager.Require("stylesheet", ResourceManifest.BOOTSWATCH_STYLE)
+            _resourceManager.Require("stylesheet", ResourceManifest.BootswatchStyle)
                             .AtHead();
 
             // Add Theme Overrides
-            _resourceManager.Require("stylesheet", ResourceManifest.CUSTOM_STYLE)
+            _resourceManager.Require("stylesheet", ResourceManifest.CustomStyle)
                             .AtHead();
         }
 

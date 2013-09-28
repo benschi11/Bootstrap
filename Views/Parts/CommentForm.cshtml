@@ -1,5 +1,4 @@
-﻿@*Orchard 1.7 Comments shape*@
-@using Orchard.Comments;
+﻿@using Orchard.Comments;
 @using Orchard.Comments.Models
 @using Orchard.Comments.Settings
 @using Orchard.Utility.Extensions;
@@ -33,19 +32,19 @@ else if (WorkContext.CurrentUser == null && !AuthorizedFor(Permissions.AddCommen
 else {
     @Html.ValidationSummary() 
     <span id="comment-form-beacon" />
-    <div class="respond well">
-        <div class="title"><h4>Post Reply</h4></div>
+    <div class="respond well well-sm">
+        <h4>Post Reply</h4>
         <div class="form">
-            @using (Html.BeginFormAntiForgeryPost(Url.Action("Create", "Comment", new { Area = "Orchard.Comments", ReturnUrl = Context.Request.ToUrlString() }), FormMethod.Post, new { @class = "comment-form form-horizontal" })) {
+            @using (Html.BeginFormAntiForgeryPost(Url.Action("Create", "Comment", new { Area = "Orchard.Comments", ReturnUrl = Context.Request.ToUrlString() }), FormMethod.Post, new { @class = "comment-form" })) {
                 if (TempData.ContainsKey("Comments.InvalidCommentEditorShape")) {
                     @Display(TempData["Comments.InvalidCommentEditorShape"]);
                 }
                 else {
                     @Display(Model.EditorShape)
                 }
-                <div class="form-actions">
+                <div class="form-group col-lg-12">
                     <button type="submit" class="btn btn-primary">Submit</button>
-                    <button type="reset" class="btn">Reset</button>
+                    <button type="reset" class="btn btn-default">Reset</button>
                 </div>
             }
         </div>

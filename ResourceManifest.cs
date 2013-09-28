@@ -2,17 +2,15 @@
 
 namespace Bootstrap {
     public class ResourceManifest : IResourceManifestProvider {
-        public const string BOOTSWATCH_STYLE = "BOOTSWATCH_STYLE";
-        public const string BOOTSTRAP_RESPONSIVE_STYLE = "BOOTSTRAP_RESPONSIVE_STYLE";
-        public const string CUSTOM_STYLE = "CUSTOM_STYLE";
+        public const string BootswatchStyle = "BootswatchStyle";
+        public const string CustomStyle = "CustomStyle";
 
         public void BuildManifests(ResourceManifestBuilder builder) {
             var manifest = builder.Add();
 
             // core styles
-            manifest.DefineStyle(BOOTSWATCH_STYLE).SetUrl("bootswatch.css", "bootswatch.css");
-            manifest.DefineStyle(BOOTSTRAP_RESPONSIVE_STYLE).SetUrl("bootstrap-responsive.min.css", "bootstrap-responsive.min.css");
-            manifest.DefineStyle(CUSTOM_STYLE).SetUrl("theme.css", "theme.css");
+            manifest.DefineStyle(BootswatchStyle).SetUrl("bootswatch.min.css", "bootswatch.min.css");
+            manifest.DefineStyle(CustomStyle).SetUrl("overwrite.css", "overwrite.css");
 
             // swatch
             manifest.DefineStyle("bootstrap.min.css").SetUrl("bootstrap.min.css", "bootstrap.min.css");
@@ -26,8 +24,6 @@ namespace Bootstrap {
             manifest.DefineStyle("simplex.min.css").SetUrl("simplex.min.css", "simplex.min.css");
             manifest.DefineStyle("slate.min.css").SetUrl("slate.min.css", "slate.min.css");
             manifest.DefineStyle("spacelab.min.css").SetUrl("spacelab.min.css", "spacelab.min.css");
-            manifest.DefineStyle("spruce.min.css").SetUrl("spruce.min.css", "spruce.min.css");
-            manifest.DefineStyle("superhero.min.css").SetUrl("superhero.min.css", "superhero.min.css");
             manifest.DefineStyle("united.min.css").SetUrl("united.min.css", "united.min.css");
         }
     }

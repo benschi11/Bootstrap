@@ -14,15 +14,15 @@ namespace Bootstrap {
             return new[] {
                 new RouteDescriptor {
                     Priority = 5,
-                    Route = new Route("Admin/" + Constants.ROUTES_AREA_NAME,
+                    Route = new Route("Admin/" + Constants.RoutesAreaName,
                         new RouteValueDictionary {
-                            {"area", Constants.ROUTES_AREA_NAME},
+                            {"area", Constants.RoutesAreaName},
                             {"controller", "Admin"},
                             {"action", "Index"}
                         },
                         new RouteValueDictionary(),
                         new RouteValueDictionary {
-                            {"area", Constants.ROUTES_AREA_NAME}
+                            {"area", Constants.RoutesAreaName}
                         },
                         new MvcRouteHandler())
                 }

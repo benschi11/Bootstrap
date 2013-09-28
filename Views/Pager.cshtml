@@ -6,8 +6,14 @@
         Model.Metadata.Alternates.Clear();
         Model.Metadata.Type = "Pager_Links";
         
-    <div class="pagination pagination-centered">
-        @Display(Model)
-    </div>
+        <div style="text-align: center;">
+            @Display(Model)
+        </div>
+
+        using (Script.Foot()) {
+            <script type="text/javascript">
+                $('ul.pager').addClass('pagination').removeClass('pager');
+            </script>
+        }
     }
 }

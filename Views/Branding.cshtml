@@ -1,10 +1,11 @@
+@using Bootstrap;
 @{
     var homeUrl = Href("~/");
+    bool useFixedNav = WorkContext.SettingsEval(Constants.UseFixedNav);
 }
 
-@if (WorkContext.HttpContext.Items[Bootstrap.Constants.ITEM_USE_FIXED_NAV] != null
-     && WorkContext.HttpContext.Items[Bootstrap.Constants.ITEM_USE_FIXED_NAV] == bool.TrueString) { 
-    <a class="brand" href="@homeUrl">@WorkContext.CurrentSite.SiteName</a>
+@if (useFixedNav) { 
+    <a class="navbar-brand" href="@homeUrl">@WorkContext.CurrentSite.SiteName</a>
 }
 else {
     <h1>@WorkContext.CurrentSite.SiteName</h1>

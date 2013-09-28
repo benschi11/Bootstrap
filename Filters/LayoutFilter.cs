@@ -34,30 +34,30 @@ namespace Bootstrap.Filters {
                 return;
 
             var themeName = _siteThemeService.GetSiteTheme();
-            if (themeName.Name == Constants.THEME_NAME) {
+            if (themeName.Name == Constants.ThemeName) {
                 var viewResult = filterContext.Result as ViewResult;
                 if (viewResult == null)
                     return;
 
                 if (settings.UseFixedNav) {
                     /* TODO: Replace note use Items collection */
-                    System.Web.HttpContext.Current.Items[Constants.ITEM_USE_FIXED_NAV] = settings.UseFixedNav.ToString();
+                    System.Web.HttpContext.Current.Items[Constants.UseFixedNav] = settings.UseFixedNav.ToString();
                 }
                 if (settings.UseNavSearch) {
                     /* TODO: Replace note use Items collection */
-                    System.Web.HttpContext.Current.Items[Constants.ITEM_USE_NAV_SEARCH] = settings.UseNavSearch.ToString();
+                    System.Web.HttpContext.Current.Items[Constants.UseNavSearch] = settings.UseNavSearch.ToString();
                 }
                 if (settings.UseFluidLayout) {
                     /* TODO: Replace note use Items collection */
-                    System.Web.HttpContext.Current.Items[Constants.ITEM_USE_FLUID_LAYOUT] = settings.UseFluidLayout.ToString();
+                    System.Web.HttpContext.Current.Items[Constants.UseFluidLayout] = settings.UseFluidLayout.ToString();
                 }
                 if (settings.UseInverseNav) {
                     /* TODO: Replace note use Items collection */
-                    System.Web.HttpContext.Current.Items[Constants.ITEM_USE_INVERSE_NAV] = settings.UseInverseNav.ToString();
+                    System.Web.HttpContext.Current.Items[Constants.UseInverseNav] = settings.UseInverseNav.ToString();
                 }
                 if (settings.UseStickyFooter) {
                     /* TODO: Replace note use Items collection */
-                    System.Web.HttpContext.Current.Items[Constants.ITEM_USE_STICKY_FOOTER] = settings.UseStickyFooter.ToString();
+                    System.Web.HttpContext.Current.Items[Constants.UseStickyFooter] = settings.UseStickyFooter.ToString();
                 }
             }
         }

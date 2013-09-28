@@ -4,39 +4,41 @@
     var userCanRegister = WorkContext.CurrentSite.As<Orchard.Users.Models.RegistrationSettingsPart>().UsersCanRegister;
     var enableLostPassword = WorkContext.CurrentSite.As<Orchard.Users.Models.RegistrationSettingsPart>().EnableLostPassword;
 }
-<div class="well logreg">
+<div class="well well-sm logreg">
     <h3>Sign In to @WorkContext.CurrentSite.SiteName</h3>
     <hr />
     @using (Html.BeginFormAntiForgeryPost(Url.Action("LogOn", new { ReturnUrl = Request.QueryString["ReturnUrl"] }), FormMethod.Post, new { @class = "form-horizontal" })) {
         <!-- Username -->
-        <div class="control-group">
-            <label class="control-label" for="userNameOrEmail">@T("Username")</label>
-            <div class="controls">
-                @Html.TextBox("userNameOrEmail", "", new { id = "username-email", @class = "input-large", autofocus = "autofocus" })
+        <div class="form-group">
+            <label for="userNameOrEmail" class="col-lg-3 control-label">@T("Username")</label>
+            <div class="col-lg-9">
+                @Html.TextBox("userNameOrEmail", "", new { id = "username-email", @class = "form-control", autofocus = "autofocus" })
                 @Html.ValidationMessage("userNameOrEmail")
             </div>
         </div>
         <!-- Password -->
-        <div class="control-group">
-            <label class="control-label" for="password">@T("Password")</label>
-            <div class="controls">
-                @Html.Password("password", string.Empty, new { @class = "input-large" })
+        <div class="form-group">
+            <label for="password" class="col-lg-3 control-label">@T("Password")</label>
+            <div class="col-lg-9">
+                @Html.Password("password", string.Empty, new { @class = "form-control" })
                 @Html.ValidationMessage("password")
             </div>
         </div>
-        <div class="control-group">
-            <div class="controls">
-                <label class="checkbox">
-                    @Html.CheckBox("rememberMe", new { id = "remember-me" })
-                    @T("Remember me")
-                </label>
+        <div class="form-group">
+            <div class="col-lg-offset-3 col-lg-9">
+                <div class="checkbox">
+                    <label>
+                        @Html.CheckBox("rememberMe", new { id = "remember-me" })
+                        @T("Remember me")
+                    </label>
+                </div>
             </div>
         </div>
-        <!-- Buttons -->
-        <div class="form-actions">
-            <!-- Buttons -->
-            <button type="submit" class="btn">@T("Login")</button>
-            <button type="reset" class="btn">@T("Reset")</button>
+        <div class="form-group">
+            <div class="col-lg-offset-3 col-lg-9">
+                <button type="submit" class="btn btn-primary">@T("Login")</button>
+                <button type="reset" class="btn btn-default">@T("Reset")</button>
+            </div>
         </div>
     }
     @if (userCanRegister) {

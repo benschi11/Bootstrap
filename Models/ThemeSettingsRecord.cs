@@ -1,7 +1,7 @@
 ﻿namespace Bootstrap.Models {
     public class ThemeSettingsRecord {
         public ThemeSettingsRecord() {
-            this.Swatch = Constants.SWATCH_CSS_DEFAULT;
+            this.Swatch = Constants.SwatchCssDefault;
             this.UseFixedNav = true;
             this.UseNavSearch = true;
             this.UseFluidLayout = false;

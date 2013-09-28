@@ -31,6 +31,7 @@
             @* should we restore the form at its original location ? *@
                 if (currentReply && currentReply.length > 0) {
                     reply.val('');
+                    $('.respond').toggle(true);
                     $('.form').after($('.comment-form'));
                 } else {
                 @* assign repliedOn id *@
@@ -39,6 +40,7 @@
 
                 @* inject the form in the replied zone *@
                 $('.comment-form').appendTo(self.parents('article').first());
+                $('.respond').toggle(false);
             }
 
             @* don't execute the link action *@
