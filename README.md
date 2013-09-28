@@ -53,7 +53,7 @@ Google:
 ### Using the NGravatar module
 1. Install the [NGravatar](https://github.com/Jetski5822/ngravatar) module
 2. Modify Bootstrap/Views/Parts/Comment.cshtml and uncomment the <div> NGravatar line in it
-3. Modify the <pre><div></pre> tag directly below it and change <pre>col-lg-12</pre> to <pre>col-lg-11</pre>
+3. Modify the div tag directly below it and change col-lg-12 to col-lg-11
 
 
 ### Using the Latest Twitter module
