@@ -50,10 +50,9 @@ Google:
 * Identifier: https://www.googleapis.com/auth/plus.login
 
 
-### Using the NGravatar module
-1. Install the [NGravatar](https://github.com/Jetski5822/ngravatar) module
-2. Modify Bootstrap/Views/Parts/Comment.cshtml and uncomment the <div> NGravatar line in it
-3. Modify the div tag directly below it and change col-lg-12 to col-lg-11
+### Using NGravatar for Comments
+1. Modify Bootstrap/Views/Parts/Comment.cshtml and uncomment the <div> NGravatar line in it
+2. Modify the div tag directly below it and change col-lg-12 to col-lg-11
 
 
 ### Using the Latest Twitter module
@@ -73,6 +72,11 @@ Google:
 2. From the Admin Settings area for General, add your AddThis service account email
 3. From the Admin Content Definition area, add the "Share Bar" part to the Content Types you would like to display the Add This Share Bar on. I typically add it to Page and BlogPost
 4. NOTE: There are settings in Placement.info removing the Share Bar part on the home page and placing it properly in the on the BlogPost part
+
+
+### Credits
+* Thanks to [Nicholas Mayne](https://github.com/Jetski5822/ngravatar) for the NGravatar module code
+* Thanks to [Advanced REI](https://github.com/advancedrei) for code simplification and Resharper-powered refactoring
 
 
 ### Bugs

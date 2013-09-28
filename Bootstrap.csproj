@@ -172,6 +172,12 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Filters\AlternateCssFilter.cs" />
     <Compile Include="Filters\LayoutFilter.cs" />
+    <Compile Include="Gravatar.cs" />
+    <Compile Include="Gremail.cs" />
+    <Compile Include="Grofile.cs" />
+    <Compile Include="GrofileInfo.cs" />
+    <Compile Include="Html\HtmlHelperExtensions.cs" />
+    <Compile Include="Html\UrlHelperExtensions.cs" />
     <Compile Include="Migrations.cs" />
     <Compile Include="Models\ThemeSettingsRecord.cs" />
     <Compile Include="Permissions.cs" />
@@ -326,6 +332,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Parts\ZenGallery.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CommentGravatar.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

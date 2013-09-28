@@ -1,7 +1,7 @@
 ﻿@using Orchard.Comments.Models
 @using Orchard.ContentManagement
 @using Orchard.Users.Models
-@using NGravatar.Html
+@using Bootstrap.Html
 
 @{
     CommentPart comment = Model.ContentPart;
@@ -19,7 +19,7 @@
         }
     }
     
-    var gravatarUrl = Url.Gravatar(string.IsNullOrWhiteSpace(gravatarEmail) ? "dummy@foobar.com" : gravatarEmail, 60, "mm", NGravatar.Rating.G);
+    var gravatarUrl = Url.Gravatar(string.IsNullOrWhiteSpace(gravatarEmail) ? "dummy@foobar.com" : gravatarEmail, 60, "mm", Bootstrap.Rating.G);
 }
 
 <img src="@gravatarUrl" alt="@T("Gravatar Image")" class="img-circle author_pic" />
