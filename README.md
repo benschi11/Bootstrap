@@ -4,6 +4,7 @@ Orchard CMS Theme based on Twitter Bootstrap
 
 ### Compatibility
 * Requires Orchard 1.7 or higher
+* Theme Preview will not work with this theme
 * Cannot be used to base a new theme on due to compiled code
 * Theme Name cannot be changed. Create a new theme and copy/modify the code if you need to change the name
 
