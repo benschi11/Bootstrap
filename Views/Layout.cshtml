@@ -1,4 +1,5 @@
 @using Bootstrap;
+@using Bootstrap.Services
 @using Orchard;
 @functions {
     // To support the layout classifaction below. Implementing as a razor function because we can, could otherwise be a Func<string[], string, string> in the code block following.
@@ -15,11 +16,7 @@
     }
 }
 @{
-    bool useFixedNav = WorkContext.SettingsEval(Constants.UseFixedNav);
-    bool useFluidLayout = WorkContext.SettingsEval(Constants.UseFluidLayout);
-    bool useNavSearch = WorkContext.SettingsEval(Constants.UseNavSearch);
-    bool useStickyFooter = WorkContext.SettingsEval(Constants.UseStickyFooter);
-    bool useInverseNav = WorkContext.SettingsEval(Constants.UseInverseNav);
+    var settings = WorkContext.Resolve<IThemeSettingsService>().GetSettings();
 
     /* Global includes for the theme
     ***************************************************************/
@@ -61,7 +58,7 @@
     WorkContext.Layout.Footer.Add(New.BadgeOfHonor(), "5"); // Powered by Raptor Concepts
     WorkContext.Layout.Navigation.Add(New.User(), "5"); // Login and dashboard links
 
-    if (useNavSearch) {
+    if (settings.UseNavSearch) {
         WorkContext.Layout.Navigation.Add(New.SearchNav(), "10"); // Search box (requires Search module)
     }
 
@@ -70,15 +67,15 @@
 
     Model.Id = "layout-wrapper";
     var tag = Tag(Model, "div"); // using Tag so the layout div gets the classes, id and other attributes added to the Model
-    var containerClass = useFluidLayout ? "container-fluid" : "container";
+    var containerClass = settings.UseFluidLayout ? "container-fluid" : "container";
     //var rowClass = useFluidLayout ? "row-fluid" : "row";
     var asideCssClass = ThemeHelper.GetAsideCssClass(asideClass);
     var tripelCssClass = ThemeHelper.GetTripelCssClass(tripelClass);
     var footerQuadCssClass = ThemeHelper.GetFooterQuadCssClass(footerQuadClass);
 }
-<div id="layout-wrapper" style="@(useStickyFooter ? "min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -115px; padding: 0 0 115px;" : string.Empty /*change last value in margin to adjust footer height-don't forget sticky footer settings in theme.css*/)">
-    @if (useFixedNav) { 
-        <div class="navbar navbar-fixed-top @(useInverseNav ? "navbar-inverse" : "navbar-default")">
+<div id="layout-wrapper" style="@(settings.UseStickyFooter ? "min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -115px; padding: 0 0 115px;" : string.Empty /*change last value in margin to adjust footer height-don't forget sticky footer settings in theme.css*/)">
+    @if (settings.UseFixedNav) { 
+        <div class="navbar navbar-fixed-top @(settings.UseInverseNav ? "navbar-inverse" : "navbar-default")">
             <div class="@containerClass">
                 <div class="navbar-header">
                     <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#main-menu">
