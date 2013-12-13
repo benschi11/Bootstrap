@@ -1,7 +1,8 @@
 @using Bootstrap;
+@using Bootstrap.Services
 @{
     var homeUrl = Href("~/");
-    bool useFixedNav = WorkContext.SettingsEval(Constants.UseFixedNav);
+    var useFixedNav = WorkContext.Resolve<IThemeSettingsService>().GetSettings().UseFixedNav;
 }
 
 @if (useFixedNav) { 
