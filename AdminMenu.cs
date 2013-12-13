@@ -27,12 +27,12 @@ namespace Bootstrap
 
         private void BuildMenu(NavigationItemBuilder menu)
         {
-            menu.Add(T(""), "10.1",
+            menu.Add(T(""), "10.0",
                 item => item
-                    .Action("Index", "Admin", new { area = Constants.RoutesAreaName })
-                    .Permission(Permissions.ManageThemeSettings)
+                    .Action("Index", "Admin", new { area = "Orchard.Themes" })
+                    .Permission(Orchard.Themes.Permissions.ApplyTheme)
             );
-            menu.Add(T("Choose Options"), "10.2",
+            menu.Add(T("Choose Options"), "10.1",
                 item => item
                     .Action("Index", "Admin", new { area = Constants.RoutesAreaName })
                     .Permission(Permissions.ManageThemeSettings)
